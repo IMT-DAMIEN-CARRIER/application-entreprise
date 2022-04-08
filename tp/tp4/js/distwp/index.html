@@ -1,0 +1,39 @@
+<html>
+    <html>
+    <header>
+        <title>This is title</title>
+    </header>
+
+    <body>
+        Hello world
+
+        <p>La machine est arrêtée.</p>
+        <button id="date">Afficher la date</button>
+        <div id="container"></div>
+    </body>
+
+    <script type="application/javascript" src="/heure.js"></script>
+    <script type="application/javascript">
+        window.onload = () => {
+            const button = document.querySelector("#date");
+            button.addEventListener("click", () => {
+                const container = document.getElementById("container");
+
+                // API Instance
+                window.apiInstance.helloUsingGET((err, data, res) => {
+                    if (err) {
+                        alert(err);
+                    } else {
+                        if (res.text) {
+                            container.innerHTML = container.innerHTML ? null : res.text;
+                            button.textContent = container.innerHTML
+                                ? "Cacher date"
+                                : "Afficher date";
+                        }
+                    }
+                });
+            });
+        };
+    </script>
+    </html>
+</html>

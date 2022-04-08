@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/tp5
+    username: dcarrier
+    password: root
+    platform: mysql
+    initialization-mode: always
